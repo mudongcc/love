@@ -282,6 +282,29 @@
             });
         });
     </script>
+    
+<!-- bgm -->
+ <audio hidden volume="0.5" id="music" autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+            src="http://ws.stream.qqmusic.qq.com/C400004Qbesg3IBGSO.m4a?guid=888501153&vkey=DDCA67E50C257702A7BB03166DDFA05133B3E305D5B44FA29BF507AA129AB03FB570EFAA2F99C84B4F52BE10FF1209A46C40E60EE09E781F&uin=&fromtag=120032">
+        你的浏览器版本太低，不支持播放BGM
+</audio>
+
+<!-- 页面交互后自动播放bgm -->
+<script type="text/javascript">
+    window.onload = function(){
+             setInterval("toggleSound()",1);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("music");//获取ID  
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+</script>
+    
+    
 </body>
 
 </html>
